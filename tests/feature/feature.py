@@ -1,6 +1,6 @@
 from typing import Any
-from rx import Observable, pipe
-from rx.operators import do_action, filter, map, ignore_elements
+from reactivex import Observable, compose
+from reactivex.operators import do_action, filter, map, ignore_elements
 
 from redux import (
     Epic,
@@ -36,7 +36,7 @@ def create_sample_feature() -> ReduxFeatureModule:
 
     sample_reducer = handle_actions({ADD_SAMPLE_ACTION: handle_sample_action})
 
-    add_epic = pipe(of_type(ADD_SAMPLE_ACTION), ignore_elements(),)
+    add_epic = compose(of_type(ADD_SAMPLE_ACTION), ignore_elements(),)
 
     sample_epic = combine_epics(add_epic)
 

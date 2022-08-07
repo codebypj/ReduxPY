@@ -150,7 +150,7 @@ Example
 .. code:: python
 
     from redux import of_init_feature, Epic
-    from rx.operators import map
+    from reactivex.operators import map
 
     initEpic: Epic = lambda actions_, state_: actions_.pipe(of_init_feature(sample_feature), map(...))
 

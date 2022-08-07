@@ -2,13 +2,14 @@ import unittest
 from unittest import TestCase
 from os.path import dirname
 from redux import create_store, create_action, select_feature, ReduxRootStore, select
-from rx.operators import map, first, filter
-from rx.subject import Subject
-from rx import Observable
-from rx.core.typing import Observer
-from .init.feature import create_init_feature, select_init_feature_module
+from reactivex.operators import map, first, filter
+from reactivex.subject import Subject
+from reactivex import Observable
+from reactivex import Observer
 
 # Current directory
+from tests.init.feature import select_init_feature_module, create_init_feature
+
 HERE = dirname(__file__)
 
 

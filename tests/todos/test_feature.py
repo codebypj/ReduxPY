@@ -1,8 +1,8 @@
 from .feature import create_todos_feature, select_todos_feature
 from .action import add_todo
 from unittest.case import TestCase
-from rx.operators import last
-from rx.subject import BehaviorSubject
+from reactivex.operators import last
+from reactivex.subject import BehaviorSubject
 
 from redux import create_store
 

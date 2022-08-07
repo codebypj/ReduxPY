@@ -1,9 +1,9 @@
 from typing import Iterable, MutableMapping, MutableSequence, Optional, Sequence
 from unittest.case import TestCase
 
-from rx import Observable, operators
-from rx.subject import BehaviorSubject
-from rx.testing import ReactiveTest, TestScheduler
+from reactivex import Observable, operators
+from reactivex.subject import BehaviorSubject
+from reactivex.testing import ReactiveTest, TestScheduler
 
 from redux import ReduxRootStore, create_store, select
 
