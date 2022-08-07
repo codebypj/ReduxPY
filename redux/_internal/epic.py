@@ -7,8 +7,8 @@ from inspect import getfullargspec
 from logging import getLogger
 from typing import Iterable, cast
 
-from rx import Observable, merge
-from rx.core.typing import Mapper
+from reactivex import Observable, merge
+from reactivex.typing import Mapper
 
 from .types import Epic
 

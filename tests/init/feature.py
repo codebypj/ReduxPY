@@ -1,6 +1,6 @@
 from typing import Any
-from rx import Observable, pipe
-from rx.operators import do_action, filter, map, ignore_elements
+from reactivex import Observable, compose
+from reactivex.operators import do_action, filter, map, ignore_elements
 
 from redux import (
     Epic,
@@ -36,9 +36,9 @@ def create_init_feature() -> ReduxFeatureModule:
 
     sample_reducer = handle_actions({ADD_INIT_ACTION: handle_init_action})
 
-    add_epic = pipe(of_type(ADD_INIT_ACTION), ignore_elements(),)
+    add_epic = compose(of_type(ADD_INIT_ACTION), ignore_elements(),)
 
-    init_epic = pipe(
+    init_epic = compose(
         of_init_feature(INIT_FEATURE), map(lambda x: add_init_action("init")),
     )
 

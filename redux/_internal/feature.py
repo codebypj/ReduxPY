@@ -6,9 +6,9 @@ from functools import partial
 from logging import getLogger
 from typing import Any, Callable, Iterable, Optional
 
-import rx.operators as op
-from rx import Observable, pipe
-from rx.core.typing import Mapper, Predicate
+import reactivex.operators as op
+from reactivex import Observable, compose
+from reactivex.typing import Mapper, Predicate
 
 from .action import is_by_selector, is_type, select_action_payload
 from .constants import INIT_ACTION
@@ -42,7 +42,7 @@ def of_init_feature(
             Operator function that accepts init actions for the feature, once
 
     """
-    return pipe(
+    return compose(
         op.filter(is_type(INIT_ACTION)),
         op.filter(has_payload(identifier)),
         op.take(1),
